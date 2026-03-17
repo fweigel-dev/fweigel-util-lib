@@ -6,7 +6,7 @@
   "description": "Shared library for mob utility mods.",
   "authors": ["fweigel-dev"],
   "contact": {},
-  "license": "CC0-1.0",
+  "license": "CC-BY-4.0",
   "icon": "assets/fweigel-util-lib/icon.png",
   "environment": "*",
   "mixins": [
