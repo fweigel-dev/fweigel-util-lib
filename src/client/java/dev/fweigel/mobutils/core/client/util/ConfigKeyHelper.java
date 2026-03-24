@@ -1,6 +1,6 @@
 package dev.fweigel.mobutils.core.client.util;
 
-import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.resources.Identifier;
 
@@ -19,7 +19,7 @@ public final class ConfigKeyHelper {
     public static KeyMapping register(String modId, String translationKey, int glfwKey) {
         KeyMapping.Category keyCategory = KeyMapping.Category.register(
                 Identifier.fromNamespaceAndPath(modId, "general"));
-        return KeyBindingHelper.registerKeyBinding(
+        return KeyMappingHelper.registerKeyMapping(
                 new KeyMapping(translationKey, glfwKey, keyCategory));
     }
 }

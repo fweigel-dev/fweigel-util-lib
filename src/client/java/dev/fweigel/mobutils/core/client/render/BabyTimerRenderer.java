@@ -1,6 +1,6 @@
 package dev.fweigel.mobutils.core.client.render;
 
-import net.fabricmc.fabric.api.client.rendering.v1.world.WorldRenderContext;
+import net.fabricmc.fabric.api.client.rendering.v1.level.LevelRenderContext;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.Entity;
 
@@ -8,7 +8,7 @@ import java.util.function.Predicate;
 
 public final class BabyTimerRenderer {
 
-    public static void render(WorldRenderContext context, Predicate<Entity> entityFilter) {
+    public static void render(LevelRenderContext context, Predicate<Entity> entityFilter) {
         Minecraft mc = Minecraft.getInstance();
         if (mc.level == null || mc.player == null) {
             return;

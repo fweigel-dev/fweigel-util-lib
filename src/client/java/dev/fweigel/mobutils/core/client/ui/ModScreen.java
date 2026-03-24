@@ -1,6 +1,6 @@
 package dev.fweigel.mobutils.core.client.ui;
 
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 
@@ -20,7 +20,7 @@ public abstract class ModScreen extends Screen {
     }
 
     /** Draws a thin horizontal separator line centred on {@code cx} at height {@code y}. */
-    protected void drawSeparator(GuiGraphics graphics, int cx, int y) {
+    protected void drawSeparator(GuiGraphicsExtractor graphics, int cx, int y) {
         int halfWidth = 80;
         graphics.fill(cx - halfWidth, y, cx + halfWidth, y + 1, 0x40FFFFFF);
     }

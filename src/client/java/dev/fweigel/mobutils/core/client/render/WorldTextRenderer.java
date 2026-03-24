@@ -1,23 +1,23 @@
 package dev.fweigel.mobutils.core.client.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.fabricmc.fabric.api.client.rendering.v1.world.WorldRenderContext;
+import net.fabricmc.fabric.api.client.rendering.v1.level.LevelRenderContext;
 import net.minecraft.client.renderer.SubmitNodeCollector;
-import net.minecraft.client.renderer.state.CameraRenderState;
+import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.phys.Vec3;
 
 public final class WorldTextRenderer {
 
-    public static void renderFloatingText(WorldRenderContext context, String text, double x, double y, double z, int color) {
-        CameraRenderState camera = context.worldState().cameraRenderState;
+    public static void renderFloatingText(LevelRenderContext context, String text, double x, double y, double z, int color) {
+        CameraRenderState camera = context.levelState().cameraRenderState;
 
-        PoseStack poseStack = context.matrices();
+        PoseStack poseStack = context.poseStack();
         if (poseStack == null) {
             return;
         }
 
-        SubmitNodeCollector collector = context.commandQueue();
+        SubmitNodeCollector collector = context.submitNodeCollector();
         if (collector == null) {
             return;
         }
