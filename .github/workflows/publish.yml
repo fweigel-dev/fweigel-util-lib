@@ -26,3 +26,15 @@ jobs:
         run: ./gradlew publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: publish to modrinth and curseforge
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          modrinth-id: 9vET5JXT
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          curseforge-id: 1488946
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+          files: build/libs/!(*-@(sources|javadoc)).jar
+          name: ${{ github.event.release.name }}
+          changelog: ${{ github.event.release.body }}
+          loaders: fabric
+          java: 25
