@@ -34,7 +34,7 @@ jobs:
           curseforge-id: 1488946
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
           files: build/libs/!(*-@(sources|javadoc)).jar
-          name: ${{ github.event.release.name }}
+          name: fweigel-util-lib ${{ github.event.release.tag_name }}
           changelog: ${{ github.event.release.body }}
           loaders: fabric
           java: 25
