@@ -23,12 +23,11 @@ public final class WorldTextRenderer {
         }
 
         Component component = Component.literal(text).withColor(color);
-        double distSq = camera.pos.distanceToSqr(x, y, z);
 
         poseStack.pushPose();
         poseStack.translate(x - camera.pos.x, y - camera.pos.y, z - camera.pos.z);
 
-        collector.submitNameTag(poseStack, Vec3.ZERO, 0, component, true, 0xF000F0, distSq, camera);
+        collector.submitNameTag(poseStack, Vec3.ZERO, 0, component, true, 0xF000F0, camera);
 
         poseStack.popPose();
     }
